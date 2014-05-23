@@ -29,7 +29,7 @@ var view = new Backbone.UI.StickyHeader({
 
 Initiated by Lyndel Thomas ( [@ryndel](http://github.com/ryndel) )
 
-Inspired by Instagram and the Codepen, ( [Multiple Stickies] http://codepen.io/usain/pen/krfwt ), by Dylan Scott 
+Inspired by Instagram and the Codepen, ( Multiple Stickies (http://codepen.io/usain/pen/krfwt ) ), by Dylan Scott 
 
 Distributed through [Makesites.org](http://makesites.org/)
 
