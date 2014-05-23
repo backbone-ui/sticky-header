@@ -4,8 +4,14 @@ A simple extension to create an Instagram style sticky header.
 
 ## Examples
 
-* [Static](http://rawgithub.com/backbone-ui/sticky-header/master/examples/static.html)
+* 
 
+## Features
+
+## Dependencies
+
+* [Backbone](http://backbonejs.org/)
+* [jQuery](http://jquery.com/)
 
 ## Install
 
@@ -13,7 +19,6 @@ Using bower:
 ```
 bower install backbone.ui.sticky-header
 ```
-
 
 ## Usage
 
@@ -32,6 +37,8 @@ Initiated by Lyndel Thomas ( [@ryndel](http://github.com/ryndel) )
 Inspired by Instagram and the Codepen, ( [Multiple Stickies](http://codepen.io/usain/pen/krfwt) ), by Dylan Scott 
 
 Distributed through [Makesites.org](http://makesites.org/)
+
+## License
 
 Released under the [MIT license](http://makesites.org/licenses/MIT)
 
