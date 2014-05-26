@@ -15,29 +15,127 @@
 
 	var StickyHeader = View.extend({
 
-		el: "", 
+		el: ".ui-sticky-header",
 
 		options : {
-			
+			itemEl: ".item header",
+			offset: 0
 		},
 
 		events: {
-			// "click"  : "someFunction"
 		},
 
 		initialize: function(options){
-			// $(this.el).appendTo('body');
+			var self = this;
 
-			_.bindAll(this, 'render');
+			_.bindAll(this, '_stickyHeaderLoad', '_stickyHeaderScroll');
+
+			//
+			this.options = _.extend({}, this.options, options);
+
+			this._stickyHeaderLoad();
+			// event
+			$(window).on("scroll", function() {
+
+				self._stickyHeaderScroll();
+
+			});
 
 			// continue...
 			return View.prototype.initialize.call(this, options);
 
 		},
-		
-		someFunction: function() {
-			
+
+		// internal methods
+
+		_stickyHeaderLoad: function() {
+
+			var offset = this.options.offset;
+
+			var items = [];
+
+			var $items = $(this.el).find( this.options.itemEl );
+
+			// look up items (use data model instead?)
+			$items.each(function(){
+				var item = {};
+				// wrap header
+				var $el = $(this).wrap('<div class="ui-sticky-header-wrapper" />');
+				var height = $el.outerHeight();
+				$el.parent().height( height );
+
+				// record position
+				var pos = $el.offset().top - offset; // normalize position (including offset)
+
+				items.push({ $el: $el, pos: pos, height: height }); // calculate these only once...
+			});
+
+			// save for later
+			this._stickyHeaderItems = items;
 		},
+
+		_stickyHeaderScroll: function() {
+
+			var items = this._stickyHeaderItems;
+			var offset = this.options.offset;
+			var scrollTop = $(window).scrollTop();
+			var winHeight = $(window).height();
+
+			for( var i in items ){
+
+				var $el = items[i].$el,
+					normalPos = items[i].pos; // original position
+
+				// don't process if (normally) off screen
+				/*
+				if( normalPos > scrollTop + winHeight || normalPos < scrollTop ){
+					// reset element (do it only once)
+					if( $el.hasClass("fixed") ) $el.removeClass("fixed").removeClass("absolute").css({ top: "auto" });
+					continue;
+				}
+				*/
+				// for visible elements...
+				var next = items[ parseInt(i)+1 ],
+					prev = items[ parseInt(i)-1 ],
+					height = items[i].height,
+					pos = $el.offset().top; // current position
+
+
+				// in case it's just about to slide out...
+				if( normalPos <= scrollTop ){
+
+					$el.addClass("fixed");
+					$el.css({ top: offset+"px" });
+
+					// position the element above the next element
+					if ( next && pos >= next.pos - height ) {
+
+						$el.addClass("absolute").css("top", next.pos - height + offset );
+
+					}
+
+				} else {
+					// this is onscreeen but still under the previous header..
+					if( $el.hasClass("fixed") ){
+						$el.removeClass("fixed");
+						$el.css({ top: "auto" });
+					}
+					// reset previous element if approaching the edge
+					if ( prev && scrollTop <= normalPos - prev.height ) {
+
+						prev.$el.removeClass("absolute")
+						if( prev.$el.hasClass("fixed") ){
+							prev.$el.css({ top: offset+"px" });
+						} else {
+							prev.$el.css({ "top": "auto" });
+						}
+
+					}
+
+				}
+			}
+		}
+
 	});
 
 
