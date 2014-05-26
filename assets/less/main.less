@@ -1,0 +1,142 @@
+@mq_xxl: 80em; /* 1280px */
+@mq_xl: 73em; /* 1168px */
+@mq_l: 50em; /* 800px */
+@mq_m: 46.8em; /* 748px */
+@mq_s: 30em; /* 480px */
+@mq_xs: 22em;
+@mq_xxs: 20em;
+
+@import "../css/common-min.css";
+
+
+.assets {
+	padding: 50px 10px;
+	position: relative;
+	
+	
+	.asset {
+		width: 210px;
+		display: inline-block;
+		padding: 15px;
+		-moz-box-shadow: 2px 3px 5px rgba(0,0,1,.34);
+		-webkit-box-shadow: 2px 3px 5px rgba(0,0,1,.34);
+		box-shadow: 2px 3px 5px rgba(0,0,1,.34);
+		margin: 0 15px 15px 0;
+		
+		img {
+			border: 1px solid #ccc;
+		}
+		
+		img.collection {
+			
+		}
+		
+		header {
+			margin-bottom: 10px;
+			
+			
+			h1 {
+				font-size: 1rem;
+				font-weight: 400;
+			}
+			
+			h2 {
+				font-size: 1rem;
+				font-weight: 300;
+			}
+		}
+	}
+		
+}
+
+
+@media screen and (min-width: @mq_xxl) {
+	
+}
+
+@media screen and (max-width: @mq_xl) {
+	
+}
+
+@media screen and (max-width: @mq_l) {
+	
+}
+
+@media screen and (max-width: @mq_m) {
+	
+}
+
+@media screen and (max-width: @mq_s) {
+	body > header {
+		/* position: fixed; */
+		display: none;
+	}
+	
+	.assets {
+		padding: 0px;
+	
+		.asset {
+			width: 100%;
+			-moz-box-shadow: none;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+			padding: 0 15px;;
+			
+			img.img-asset {
+				width: 100%;
+				height: auto;
+			}
+			
+			/*&:first-child {
+				header {
+					background-color: #f00;
+				}
+			}*/
+			
+			header.fixed {
+				position: fixed;
+				left: 0;
+			}
+			
+			header {
+				height: 50px;
+			}
+			
+			.content {
+				padding-top: 50px;
+			}
+			
+			
+			
+			.followMeBar {
+			/* background: #222;
+			border-bottom: solid 1px #111;
+			border-top: solid 1px #444; */
+			/* padding: 1%; */
+			position: relative;
+			z-index: 1;
+		}
+		.followMeBar.fixed {
+			position: fixed;
+			/* top: 86px;
+			width: 98%; */
+			z-index: 0;
+		}
+		.followMeBar.fixed.absolute {
+			position: absolute;
+		}
+
+			
+		}
+	}
+
+}
+
+@media screen and (max-width: @mq_xs) {
+
+}
+
+@media screen and (max-width: @mq_xxs) {
+
+}
+
