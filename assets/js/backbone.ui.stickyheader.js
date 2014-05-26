@@ -123,7 +123,8 @@
 					// reset previous element if approaching the edge
 					if ( prev && scrollTop <= normalPos - prev.height ) {
 
-						prev.$el.removeClass("absolute")
+						prev.$el.removeClass("absolute");
+						//
 						if( prev.$el.hasClass("fixed") ){
 							prev.$el.css({ top: offset+"px" });
 						} else {
