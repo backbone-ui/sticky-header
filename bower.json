@@ -1,7 +1,7 @@
 {
 	"name": "backbone.ui.stickyheader",
-	"version": "0.0.1",
-	"description": "Sticky header for collections",
+	"version": "0.1.0",
+	"description": "Positioning a section header in a fixed state (while relevant)",
 	"authors": [
 		"Lyndel Thomas <lyndelt@gmail.com>",
 		"Makis Tracend <makis@makesit.es>"
