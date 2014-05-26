@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Backbone UI: Sticky Header - Static example</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<!-- reset stylesheet -->
+<link type="text/css" href="//rawgit.com/commons/common.css/master/build/common-min.css" media="screen" rel="stylesheet">
+
+<!-- plugin styles -->
+<link type="text/css" href="../assets/css/backbone.ui.stickyheader.css" media="screen" rel="stylesheet">
+
+
+<!-- example styles -->
+<style>
+	body {
+		margin: 0;
+		background: #fff;
+		color: #000;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		overflow-x: hidden;
+	}
+
+	body > header {
+		position: fixed;
+		background: #fafafa;
+		width: 100%;
+		z-index: 10000;
+		top: 0;
+		height: 50px;
+		padding: 15px;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: normal;
+		margin: 0;
+		padding: 0;
+	}
+
+	h1 {
+		font-size: 16px;
+	}
+
+	h2 {
+		font-size: 14px;
+	}
+
+	.item {
+		margin-top: 50px;
+		width: 100%;
+		height: 100%;
+	}
+
+	.item .content {
+		padding: 10px 15px;
+	}
+
+	.item img.img-asset {
+		width: 100%;
+		height: auto;
+	}
+
+	.item header {
+		position: relative;
+		width: 100%;
+		padding: 10px 15px;
+		background: #fff;
+		z-index: 1;
+	}
+
+	header .collection {
+		margin-right: 10px;
+	}
+</style>
+</head>
+
+<body>
+<header>
+	<h1>Heading</h1>
+</header>
+<div class="items ui-sticky-header">
+	<div class="item">
+		<header class="clearfix"><img src="http://placekitten.com/40/40" class="collection fl" width="40" height="40">
+			<div class="fl">
+				<h1>Heading 1</h1>
+				<h2>First thing</h2>
+			</div>
+		</header>
+		<div class="content"><img src="http://placekitten.com/500/500" class="img-asset">
+			<p>Lorem ipsum</p>
+		</div>
+	</div>
+	<div class="item">
+		<header class="clearfix"><img src="http://placekitten.com/40/40" class="collection fl" width="40" height="40">
+			<div class="fl">
+				<h1>Heading 2</h1>
+				<h2>Second thing</h2>
+			</div>
+		</header>
+		<div class="content"><img src="http://placekitten.com/500/600" class="img-asset">
+			<p>Lorem ipsum</p>
+		</div>
+	</div>
+	<div class="item">
+		<header class="clearfix"><img src="http://placekitten.com/40/40" class="collection fl" width="40" height="40">
+			<div class="fl">
+				<h1>Heading 3</h1>
+				<h2>Third thing</h2>
+			</div>
+		</header>
+		<div class="content"><img src="http://placekitten.com/500/400" class="img-asset">
+			<p>Lorem ipsum</p>
+		</div>
+	</div>
+	<div class="item">
+		<header class="clearfix"><img src="http://placekitten.com/40/40" class="collection fl" width="40" height="40">
+			<div class="fl">
+				<h1>Heading 4</h1>
+				<h2>Fourth thing</h2>
+			</div>
+		</header>
+		<div class="content"><img src="http://placekitten.com/500/700" class="img-asset">
+			<p>Lorem ipsum</p>
+		</div>
+	</div>
+	<div class="item">
+		<header class="clearfix"><img src="http://placekitten.com/40/40" class="collection fl" width="40" height="40">
+			<div class="fl">
+				<h1>Heading 5</h1>
+				<h2>Fifth thing</h2>
+			</div>
+		</header>
+		<div class="content"><img src="http://placekitten.com/500/500" class="img-asset">
+			<p>Lorem ipsum</p>
+		</div>
+	</div>
+	<div class="item">
+		<header class="clearfix"><img src="http://placekitten.com/40/40" class="collection fl" width="40" height="40">
+			<div class="fl">
+				<h1>Heading 6</h1>
+				<h2>Sixth thing</h2>
+			</div>
+		</header>
+		<div class="content"><img src="http://placekitten.com/500/300" class="img-asset">
+			<p>Lorem ipsum</p>
+		</div>
+	</div>
+	<div class="item">
+		<header class="clearfix"><img src="http://placekitten.com/40/40" class="collection fl" width="40" height="40">
+			<div class="fl">
+				<h1>Heading 7</h1>
+				<h2>Seventh thing</h2>
+			</div>
+		</header>
+		<div class="content"><img src="http://placekitten.com/500/600" class="img-asset">
+			<p>Lorem ipsum</p>
+		</div>
+	</div>
+	<div class="item">
+		<header class="clearfix"><img src="http://placekitten.com/40/40" class="collection fl" width="40" height="40">
+			<div class="fl">
+				<h1>Heading 8</h1>
+				<h2>Eighth thing</h2>
+			</div>
+		</header>
+		<div class="content"><img src="http://placekitten.com/500/200" class="img-asset">
+			<p>Lorem ipsum</p>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+
+<!-- plugin lib -->
+<script type="text/javascript" src="../assets/js/backbone.ui.stickyheader.js"></script>
+
+
+<!-- example logic -->
+<script type="text/javascript">
+	var newStickies = new Backbone.UI.StickyHeader({
+		offset: 50
+	});
+</script>
+</body>
+</html>
