@@ -1,0 +1,29 @@
+{
+	"name": "backbone.ui.stickyheader",
+	"version": "0.0.1",
+	"description": "Sticky header for collections",
+	"authors": [
+		"Lyndel Thomas <lyndelt@gmail.com>",
+		"Makis Tracend <makis@makesit.es>"
+	],
+	"license": "MIT",
+	"keywords": [
+		"backbone",
+		"ui",
+		"sticky",
+		"header"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/backbone-ui/sticky-header.git"
+	},
+	"ignore": [
+		"node_modules"
+	],
+	"dependencies": {
+		"backbone": "*",
+		"underscore": "*",
+		"jquery": "*"
+	}
+}
+
